@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-    class doFactorial
+    class Factorial
     {
         static void Main(string[] args)
         {
             int input;
             Console.Write("Enter number: ");
             input = int.Parse(Console.ReadLine());
-            Console.WriteLine("Factorial is : " + factorial(input));
+            Console.WriteLine("Factorial is : " + doFactorial(input));
             Console.ReadKey();
         }
 
-        public static long factorial(int number)
+        public static long doFactorial(int number)
         {
             if(number == 1)
             {
@@ -25,7 +25,7 @@ namespace ConsoleApplication1
             }
             else
             {
-                return number * factorial(number - 1);
+                return number * doFactorial(number - 1);
             }
         }
 	}
