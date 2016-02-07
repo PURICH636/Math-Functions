@@ -1,3 +1,3 @@
 # Math-Recursive-Functions
 
-Recursive function by C#
+Recursive function by using C#
