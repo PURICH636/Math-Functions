@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-    class isPrimeNumber
+    class PrimeNumber
     {
         static void Main(string[] args)
         {
