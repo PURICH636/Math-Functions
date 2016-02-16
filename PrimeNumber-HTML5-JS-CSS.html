@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {background-color:lightgrey;}
+            p    {color:red;}
+            caption {border-collapse: collapse; padding: 5px;}
+            #header {
+                background-color:black;
+                color:white;
+                text-align:center;
+                padding:5px;
+                font-family:courier;
+            }
+            #footer {
+                background-color:black;
+                color:white;
+                clear:both;
+                text-align:right;
+               padding:5px;	 	 
+            }
+        </style>
+    </head>
+    <body style="background-color:lightgrey;">
+        <div id="header">
+            <h1>Application for a prime number</h1>
+        </div>
+        <br>
+        <form action="action_page.php">
+            <fieldset>
+              <legend>A Prime Number can be divided evenly only by 1 or itself:</legend>
+              Enter number:<br>
+              <input id="number" type="text">
+              <button type="button" onclick="numeric()">Calculate</button>
+              <p id="Error"></p>
+              <p id="Result"></p>
+            </fieldset>
+        </form>
+        
+        <br>
+        <div id="footer">
+            &#169; : Purich Wiengthong;
+        </div>
+        
+        <script>
+            function numeric(){
+                var $number = document.getElementById("number").value;
+                if(isPrime($number) == true){
+                    document.getElementById("Result").innerHTML = $number + " is prime number";
+                }
+                else if(isPrime($number) == false && isNaN($input) == true && Math.round($input) != $input){
+                    document.getElementById("Result").innerHTML = $number + " is not prime number";
+                }
+            }
+            function isPrime($input) {
+                //is not a number
+                if (isNaN($input)) {
+                    document.getElementById("Error").innerHTML = 'An input is not numberic';
+                    return false;
+                }
+                if (Math.round($input) != $input) {
+                    document.getElementById("Error").innerHTML = 'An input is not integer';
+                    return false;
+                }
+                if ($input === 1) {
+                    //document.getElementById("Result").innerHTML = '1 is prime number';
+                    return false;
+                }
+                return doRecursion($input, $input - 1);
+                }
+                function doRecursion($a, $b)
+            {
+                if ($b == 1) {
+                    return true;
+                }
+                if ($a % $b == 0) {
+                    return false;
+                }
+                return doRecursion($a, $b - 1);
+            }
+        </script>
+    </body>
+</html>
